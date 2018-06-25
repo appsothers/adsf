@@ -7,6 +7,7 @@ sudo yum -y install php71 php71-mbstring php71-xml php71-fpm php71-pdo php71-mys
 sudo yum -y install httpd24
 curl -s https://getcomposer.org/installer | php
 php composer.phar install
+php composer.phar update
 mv composer.phar /usr/local/bin/composer
 sed -i "s|AllowOverride None|AllowOverride All|g"  /etc/httpd/conf/httpd.conf
 sed -i "s|/var/www/html|/var/www/phplaravel/public|g"  /etc/httpd/conf/httpd.conf
